@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
 import Image from 'next/image'
 import { ArrowDown } from 'lucide-react'
@@ -28,8 +28,10 @@ export function Hero() {
     } else if (deleting && displayed.length > 0) {
       timeout = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 40)
     } else if (deleting && displayed.length === 0) {
-      setDeleting(false)
-      setRoleIndex((i) => (i + 1) % roles.length)
+      timeout = setTimeout(() => {
+        setDeleting(false)
+        setRoleIndex((i) => (i + 1) % roles.length)
+      }, 0)
     }
 
     return () => clearTimeout(timeout)

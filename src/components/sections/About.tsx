@@ -19,7 +19,7 @@ export function About() {
           <p className="opacity-80 leading-relaxed">{t('bio1')}</p>
           <p className="opacity-80 leading-relaxed">{t('bio2')}</p>
           <blockquote className="border-l-4 border-amber pl-4 font-display italic text-lg opacity-90">
-            "{t('quote')}"
+            &ldquo;{t('quote')}&rdquo;
           </blockquote>
         </div>
 
