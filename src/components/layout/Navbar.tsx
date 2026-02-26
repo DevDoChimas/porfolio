@@ -1,0 +1,96 @@
+'use client'
+
+import { useState, useEffect } from 'react'
+import { useTranslations, useLocale } from 'next-intl'
+import { usePathname, useRouter } from 'next/navigation'
+import { useTheme } from 'next-themes'
+import Link from 'next/link'
+import { Sun, Moon, Globe } from 'lucide-react'
+import { identity } from '@/content/config'
+import { locales, type Locale } from '@/i18n'
+
+const NAV_LINKS = ['about', 'skills', 'experience', 'projects', 'contact'] as const
+
+export function Navbar() {
+  const t = useTranslations('nav')
+  const { theme, setTheme } = useTheme()
+  const locale = useLocale() as Locale
+  const router = useRouter()
+  const pathname = usePathname()
+  const [scrolled, setScrolled] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+    const onScroll = () => setScrolled(window.scrollY > 40)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  function toggleLocale() {
+    const next: Locale = locale === 'pt-BR' ? 'en' : 'pt-BR'
+    const newPath = next === 'pt-BR'
+      ? pathname.replace(/^\/en/, '') || '/'
+      : `/en${pathname}`
+    router.push(newPath)
+  }
+
+  return (
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? 'py-3 backdrop-blur-md bg-[rgb(var(--background)/0.85)] border-b border-[rgb(var(--border)/0.15)] shadow-sm'
+          : 'py-6'
+      }`}
+    >
+      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
+        {/* Brand */}
+        <Link
+          href="/"
+          className="font-display font-bold text-lg tracking-tight hover:text-amber transition-colors"
+        >
+          {identity.brand}
+        </Link>
+
+        {/* Links */}
+        <nav className="hidden md:flex items-center gap-8">
+          {NAV_LINKS.map((key) => (
+            <a
+              key={key}
+              href={`#${key}`}
+              className="font-mono text-xs tracking-widest uppercase opacity-70 hover:opacity-100 hover:text-amber transition-all"
+            >
+              {t(key)}
+            </a>
+          ))}
+        </nav>
+
+        {/* Actions */}
+        <div className="flex items-center gap-3">
+          {/* Language toggle */}
+          <button
+            onClick={toggleLocale}
+            title={t('toggleLang')}
+            className="p-2 rounded-full hover:bg-[rgb(var(--surface))] transition-colors"
+          >
+            <Globe size={16} className="opacity-70" />
+          </button>
+
+          {/* Theme toggle */}
+          {mounted && (
+            <button
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              title={t('toggleTheme')}
+              className="p-2 rounded-full hover:bg-[rgb(var(--surface))] transition-colors"
+            >
+              {theme === 'dark'
+                ? <Sun size={16} className="opacity-70" />
+                : <Moon size={16} className="opacity-70" />
+              }
+            </button>
+          )}
+        </div>
+      </div>
+    </header>
+  )
+}
