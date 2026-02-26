@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
 import Image from 'next/image'
 import { ArrowDown } from 'lucide-react'
-import { identity, heroRoles, type Locale } from '@/content/config'
+import { identity, heroRoles } from '@/content/config'
+import type { Locale } from '@/i18n/routing'
 
 export function Hero() {
   const t = useTranslations('hero')

@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
-import { getMessages } from 'next-intl/server'
+import { hasLocale } from 'next-intl'
+import { notFound } from 'next/navigation'
 import { ThemeProvider } from '@/components/layout/ThemeProvider'
 import { identity } from '@/content/config'
+import { routing } from '@/i18n/routing'
 import '@/app/globals.css'
 
 export const metadata: Metadata = {
@@ -18,12 +20,16 @@ export const metadata: Metadata = {
 
 export default async function LocaleLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode
-  params: { locale: string }
+  params: Promise<{ locale: string }>
 }) {
-  const messages = await getMessages()
+  const { locale } = await params
+
+  if (!hasLocale(routing.locales, locale)) {
+    notFound()
+  }
 
   return (
     <html lang={locale} suppressHydrationWarning>
@@ -34,7 +40,7 @@ export default async function LocaleLayout({
           enableSystem={false}
           disableTransitionOnChange={false}
         >
-          <NextIntlClientProvider messages={messages}>
+          <NextIntlClientProvider>
             {children}
           </NextIntlClientProvider>
         </ThemeProvider>

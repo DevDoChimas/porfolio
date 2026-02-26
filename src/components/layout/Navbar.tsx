@@ -2,12 +2,11 @@
 
 import { useState, useEffect } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
-import { usePathname, useRouter } from 'next/navigation'
 import { useTheme } from 'next-themes'
-import Link from 'next/link'
 import { Sun, Moon, Globe } from 'lucide-react'
 import { identity } from '@/content/config'
-import { locales, type Locale } from '@/i18n'
+import { type Locale, routing } from '@/i18n/routing'
+import { Link, usePathname, useRouter } from '@/i18n/navigation'
 
 const NAV_LINKS = ['about', 'skills', 'experience', 'projects', 'contact'] as const
 
@@ -29,10 +28,7 @@ export function Navbar() {
 
   function toggleLocale() {
     const next: Locale = locale === 'pt-BR' ? 'en' : 'pt-BR'
-    const newPath = next === 'pt-BR'
-      ? pathname.replace(/^\/en/, '') || '/'
-      : `/en${pathname}`
-    router.push(newPath)
+    router.replace(pathname, { locale: next })
   }
 
   return (
