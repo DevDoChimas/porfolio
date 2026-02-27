@@ -1,7 +1,8 @@
 import { techStack } from '@/content/config'
 
+const doubled = [...techStack, ...techStack]
+
 export function Marquee() {
-  const doubled = [...techStack, ...techStack]
 
   return (
     <div className="border-y border-[rgb(var(--border)/0.15)] py-4 overflow-hidden bg-amber/5">

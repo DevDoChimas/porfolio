@@ -1,10 +1,11 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
 import Image from 'next/image'
 import { ArrowDown } from 'lucide-react'
-import { identity, heroRoles, type Locale } from '@/content/config'
+import { identity, heroRoles } from '@/content/config'
+import type { Locale } from '@/i18n/routing'
 
 export function Hero() {
   const t = useTranslations('hero')
@@ -27,8 +28,10 @@ export function Hero() {
     } else if (deleting && displayed.length > 0) {
       timeout = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 40)
     } else if (deleting && displayed.length === 0) {
-      setDeleting(false)
-      setRoleIndex((i) => (i + 1) % roles.length)
+      timeout = setTimeout(() => {
+        setDeleting(false)
+        setRoleIndex((i) => (i + 1) % roles.length)
+      }, 0)
     }
 
     return () => clearTimeout(timeout)

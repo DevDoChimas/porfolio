@@ -1,9 +1,31 @@
 import type { Metadata } from 'next'
+import { Bricolage_Grotesque, Plus_Jakarta_Sans, DM_Mono } from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl'
-import { getMessages } from 'next-intl/server'
+import { hasLocale } from 'next-intl'
+import { notFound } from 'next/navigation'
 import { ThemeProvider } from '@/components/layout/ThemeProvider'
 import { identity } from '@/content/config'
+import { routing } from '@/i18n/routing'
 import '@/app/globals.css'
+
+const display = Bricolage_Grotesque({
+  subsets: ['latin'],
+  variable: '--font-family-display',
+  display: 'swap',
+})
+
+const body = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  variable: '--font-family-body',
+  display: 'swap',
+})
+
+const mono = DM_Mono({
+  subsets: ['latin'],
+  weight: ['300', '400', '500'],
+  variable: '--font-family-mono',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: `${identity.brand} — ${identity.name}`,
@@ -18,15 +40,23 @@ export const metadata: Metadata = {
 
 export default async function LocaleLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode
-  params: { locale: string }
+  params: Promise<{ locale: string }>
 }) {
-  const messages = await getMessages()
+  const { locale } = await params
+
+  if (!hasLocale(routing.locales, locale)) {
+    notFound()
+  }
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html
+      lang={locale}
+      suppressHydrationWarning
+      className={`${display.variable} ${body.variable} ${mono.variable}`}
+    >
       <body>
         <ThemeProvider
           attribute="class"
@@ -34,7 +64,7 @@ export default async function LocaleLayout({
           enableSystem={false}
           disableTransitionOnChange={false}
         >
-          <NextIntlClientProvider messages={messages}>
+          <NextIntlClientProvider>
             {children}
           </NextIntlClientProvider>
         </ThemeProvider>
