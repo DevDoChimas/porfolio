@@ -1,0 +1,115 @@
+{
+  "nav": {
+    "about": "Sobre",
+    "skills": "Skills",
+    "experience": "Experiência",
+    "projects": "Projetos",
+    "contact": "Contato",
+    "toggleTheme": "Alternar tema",
+    "toggleLang": "Switch to English"
+  },
+  "hero": {
+    "greeting": "Olá, eu sou",
+    "scrollHint": "Role para explorar",
+    "stats": {
+      "years": "anos de experiência",
+      "projects": "projetos entregues",
+      "coffee": "chimarrão tomado"
+    },
+    "badge": {
+      "available": "Disponível para projetos",
+      "location": "Florianópolis, SC"
+    }
+  },
+  "about": {
+    "label": "Sobre mim",
+    "title": "Gaúcho que trocou o campo pelo código",
+    "bio1": "Sou desenvolvedor full-stack com mais de 6 anos transformando ideias complexas em produtos digitais reais. Fundei a Dev do Chimas para atender empresas que precisam de software sob medida — sem blablabla, com resultado.",
+    "bio2": "Trabalho principalmente com Python e TypeScript, mas o que me motiva de verdade é resolver problemas de negócio elegantemente. Se cabe numa xícara de chimarrão, cabe num bom software.",
+    "quote": "Código bom é aquele que o próximo dev entende — e o cliente nem precisa saber que existe."
+  },
+  "skills": {
+    "label": "Stack",
+    "title": "Ferramentas do ofício",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "infra": "Banco & Infra"
+    }
+  },
+  "experience": {
+    "label": "Carreira",
+    "title": "Onde estive, o que aprendi"
+  },
+  "projects": {
+    "label": "Projetos",
+    "title": "Coisas que saíram do papel",
+    "viewProject": "Ver projeto",
+    "viewCode": "Ver código",
+    "status": {
+      "live": "No ar",
+      "beta": "Beta",
+      "wip": "Em desenvolvimento",
+      "closed": "Encerrado"
+    },
+    "supercota": {
+      "name": "SuperCota",
+      "description": "SaaS de geração de orçamentos inteligentes para empresas. Motor de cotação com IA, PDFs automatizados e painel de gestão."
+    },
+    "jusdocs": {
+      "name": "JusDocs",
+      "description": "Plataforma de documentos jurídicos com busca avançada via Elastic Search, suporte a múltiplos escritórios e geração automatizada de peças."
+    },
+    "cacheta": {
+      "name": "Cacheta",
+      "description": "Jogo de cartas multiplayer em tempo real. Partidas online, ranking, salas privadas e suporte mobile."
+    }
+  },
+  "workflow": {
+    "label": "Processo",
+    "title": "Como trabalho",
+    "steps": {
+      "discovery": {
+        "name": "Discovery",
+        "description": "Entendo o negócio antes de escrever uma linha de código."
+      },
+      "architecture": {
+        "name": "Arquitetura",
+        "description": "Defino stack, estrutura e decisões técnicas com documentação."
+      },
+      "development": {
+        "name": "Desenvolvimento",
+        "description": "Ciclos curtos com entregas incrementais e feedback contínuo."
+      },
+      "review": {
+        "name": "Review & Feedback",
+        "description": "Code review criterioso e validação com o cliente em cada sprint."
+      },
+      "deploy": {
+        "name": "Deploy",
+        "description": "CI/CD automatizado, monitoramento e rollback quando necessário."
+      },
+      "evolution": {
+        "name": "Evolução",
+        "description": "Métricas, iteração e melhorias contínuas pós-lançamento."
+      }
+    }
+  },
+  "contact": {
+    "label": "Contato",
+    "title": "Vamos tomar um chimarrão?",
+    "subtitle": "Tem um projeto em mente? Me chama.",
+    "email": "Mandar e-mail",
+    "company": {
+      "cnpj": "CNPJ",
+      "founded": "Fundada em",
+      "status": "Situação",
+      "statusValue": "Ativa",
+      "location": "Localização"
+    }
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados.",
+    "madeWith": "Feito com ☕ e 🧉 em Florianópolis"
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact",
+    "toggleTheme": "Toggle theme",
+    "toggleLang": "Mudar para Português"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "scrollHint": "Scroll to explore",
+    "stats": {
+      "years": "years of experience",
+      "projects": "projects delivered",
+      "coffee": "chimarrão consumed"
+    },
+    "badge": {
+      "available": "Available for projects",
+      "location": "Florianópolis, Brazil"
+    }
+  },
+  "about": {
+    "label": "About",
+    "title": "A gaucho who traded the fields for code",
+    "bio1": "I'm a full-stack developer with 6+ years turning complex ideas into real digital products. I founded Dev do Chimas to serve companies that need custom software — no fluff, just results.",
+    "bio2": "I work mainly with Python and TypeScript, but what really drives me is solving business problems elegantly. If it fits in a cup of chimarrão, it fits in good software.",
+    "quote": "Good code is code the next dev can understand — and the client doesn't even need to know it exists."
+  },
+  "skills": {
+    "label": "Stack",
+    "title": "Tools of the trade",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "infra": "Database & Infra"
+    }
+  },
+  "experience": {
+    "label": "Career",
+    "title": "Where I've been, what I've learned"
+  },
+  "projects": {
+    "label": "Projects",
+    "title": "Things that got off the ground",
+    "viewProject": "View project",
+    "viewCode": "View code",
+    "status": {
+      "live": "Live",
+      "beta": "Beta",
+      "wip": "In progress",
+      "closed": "Closed"
+    },
+    "supercota": {
+      "name": "SuperCota",
+      "description": "AI-powered quotation SaaS for businesses. Smart pricing engine, automated PDFs, and a management dashboard."
+    },
+    "jusdocs": {
+      "name": "JusDocs",
+      "description": "Legal document platform with advanced Elastic Search, multi-firm support, and automated document generation."
+    },
+    "cacheta": {
+      "name": "Cacheta",
+      "description": "Real-time multiplayer card game. Online matches, ranking, private rooms, and mobile support."
+    }
+  },
+  "workflow": {
+    "label": "Process",
+    "title": "How I work",
+    "steps": {
+      "discovery": {
+        "name": "Discovery",
+        "description": "I understand the business before writing a single line of code."
+      },
+      "architecture": {
+        "name": "Architecture",
+        "description": "I define stack, structure and technical decisions with documentation."
+      },
+      "development": {
+        "name": "Development",
+        "description": "Short cycles with incremental deliveries and continuous feedback."
+      },
+      "review": {
+        "name": "Review & Feedback",
+        "description": "Thorough code review and client validation at each sprint."
+      },
+      "deploy": {
+        "name": "Deploy",
+        "description": "Automated CI/CD, monitoring and rollback when necessary."
+      },
+      "evolution": {
+        "name": "Evolution",
+        "description": "Metrics, iteration and continuous improvements post-launch."
+      }
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Let's share a chimarrão?",
+    "subtitle": "Got a project in mind? Let's talk.",
+    "email": "Send an email",
+    "company": {
+      "cnpj": "CNPJ",
+      "founded": "Founded in",
+      "status": "Status",
+      "statusValue": "Active",
+      "location": "Location"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "madeWith": "Made with ☕ and 🧉 in Florianópolis"
+  }
+}

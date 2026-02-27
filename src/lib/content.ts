@@ -137,9 +137,3 @@ export function getProjects(): Project[] {
 export function getWorkflowSteps(): WorkflowStep[] {
   return readFrontmatter<{ workflowSteps: WorkflowStep[] }>('workflow.md').workflowSteps
 }
-
-// ─── Locale messages ────────────────────────────────────────────────────────
-
-export function getMessages(locale: string): Record<string, unknown> {
-  return readFrontmatter<Record<string, unknown>>(`locales/${locale}.md`)
-}
