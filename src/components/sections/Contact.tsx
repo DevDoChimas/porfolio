@@ -1,13 +1,16 @@
-import { useTranslations } from 'next-intl'
+import { Github, Linkedin, Mail, Phone } from 'lucide-react'
 import Link from 'next/link'
-import { Mail, Github, Linkedin, Phone } from 'lucide-react'
-import { identity, company, social } from '@/content/config'
+import { useTranslations } from 'next-intl'
+import { company, identity, social } from '@/content/config'
 
 export function Contact() {
   const t = useTranslations('contact')
 
   return (
-    <section id="contact" className="content-auto py-24 px-6 bg-[rgb(var(--navy))] text-[rgb(var(--cream))]">
+    <section
+      id="contact"
+      className="content-auto py-24 px-6 bg-[rgb(var(--navy))] text-[rgb(var(--cream))]"
+    >
       <div className="max-w-4xl mx-auto text-center">
         <p className="font-mono text-xs tracking-widest uppercase text-amber mb-4">{t('label')}</p>
         <h2 className="font-display text-4xl md:text-6xl font-bold mb-4">{t('title')}</h2>
@@ -50,13 +53,15 @@ export function Contact() {
         {/* Company info */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-[rgb(var(--cream)/0.1)] pt-12">
           {[
-            { label: t('company.cnpj'),    value: company.cnpj },
+            { label: t('company.cnpj'), value: company.cnpj },
             { label: t('company.founded'), value: company.founded },
-            { label: t('company.status'),  value: t('company.statusValue') },
-            { label: t('company.location'),value: identity.location },
+            { label: t('company.status'), value: t('company.statusValue') },
+            { label: t('company.location'), value: identity.location },
           ].map((item) => (
             <div key={item.label} className="text-center">
-              <p className="font-mono text-xs text-amber tracking-widest uppercase mb-1">{item.label}</p>
+              <p className="font-mono text-xs text-amber tracking-widest uppercase mb-1">
+                {item.label}
+              </p>
               <p className="font-mono text-xs opacity-70">{item.value}</p>
             </div>
           ))}

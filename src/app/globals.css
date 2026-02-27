@@ -1,48 +1,48 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
 
 /* ─── CSS Custom Properties ─────────────────────────────────────────────── */
 :root {
   /* Brand palette */
-  --cream:      247 232 200;  /* #F7E8C8 */
-  --navy:       26  43  60;   /* #1A2B3C */
-  --amber:      232 168 32;   /* #E8A820 */
-  --terracotta: 196 98  45;   /* #C4622D */
+  --cream: 247 232 200; /* #F7E8C8 */
+  --navy: 26 43 60; /* #1A2B3C */
+  --amber: 232 168 32; /* #E8A820 */
+  --terracotta: 196 98 45; /* #C4622D */
 
   /* Semantic tokens — Light mode */
-  --background:        var(--cream);
-  --foreground:        var(--navy);
-  --surface:           255 255 255;
-  --surface-raised:    247 232 200;
-  --muted-foreground:  26  43  60;
-  --accent:            var(--amber);
+  --background: var(--cream);
+  --foreground: var(--navy);
+  --surface: 255 255 255;
+  --surface-raised: 247 232 200;
+  --muted-foreground: 26 43 60;
+  --accent: var(--amber);
   --accent-foreground: var(--navy);
-  --border:            26 43 60;
+  --border: 26 43 60;
 }
 
 .dark {
   /* Semantic tokens — Dark mode */
-  --background:        var(--navy);
-  --foreground:        var(--cream);
-  --surface:           13 22 31;   /* darker navy */
-  --surface-raised:    20 33 46;
-  --muted-foreground:  180 170 150;
-  --accent:            var(--amber);
+  --background: var(--navy);
+  --foreground: var(--cream);
+  --surface: 13 22 31; /* darker navy */
+  --surface-raised: 20 33 46;
+  --muted-foreground: 180 170 150;
+  --accent: var(--amber);
   --accent-foreground: var(--navy);
-  --border:            247 232 200;
+  --border: 247 232 200;
 }
 
 /* ─── Theme ────────────────────────────────────────────────────────────── */
 @theme {
-  --color-cream: #F7E8C8;
-  --color-cream-dark: #1A1612;
-  --color-navy: #1A2B3C;
-  --color-navy-dark: #0D161F;
-  --color-amber: #E8A820;
-  --color-amber-dark: #C48E18;
-  --color-terracotta: #C4622D;
-  --color-terracotta-dark: #A3501F;
+  --color-cream: #f7e8c8;
+  --color-cream-dark: #1a1612;
+  --color-navy: #1a2b3c;
+  --color-navy-dark: #0d161f;
+  --color-amber: #e8a820;
+  --color-amber-dark: #c48e18;
+  --color-terracotta: #c4622d;
+  --color-terracotta-dark: #a3501f;
 
   --font-display: var(--font-family-display), sans-serif;
   --font-body: var(--font-family-body), sans-serif;
@@ -54,20 +54,39 @@
   --animate-fade-up: fade-up 0.6s ease-out forwards;
 
   @keyframes marquee {
-    0%   { transform: translateX(0%); }
-    100% { transform: translateX(-50%); }
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
   }
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50%      { transform: translateY(-8px); }
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
   }
   @keyframes spin-slow {
-    0%   { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
   @keyframes fade-up {
-    0%   { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 
@@ -81,15 +100,22 @@
     @apply font-body;
     background-color: rgb(var(--background));
     color: rgb(var(--foreground));
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
     -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     @apply font-display;
   }
 
-  code, pre, .mono {
+  code,
+  pre,
+  .mono {
     @apply font-mono;
   }
 }
@@ -102,7 +128,9 @@
 @utility reveal {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 @utility content-auto {

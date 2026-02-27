@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl'
-import { identity, company } from '@/content/config'
+import { company, identity } from '@/content/config'
 
 export function Footer() {
   const t = useTranslations('footer')

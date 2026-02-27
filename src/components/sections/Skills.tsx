@@ -1,7 +1,7 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
 import { useTranslations } from 'next-intl'
+import { useEffect, useRef, useState } from 'react'
 import { skillCategories } from '@/content/config'
 
 function SkillBar({ level, visible }: { level: number; visible: boolean }) {
@@ -22,8 +22,10 @@ export function Skills() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true) },
-      { threshold: 0.2 }
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true)
+      },
+      { threshold: 0.2 },
     )
     if (ref.current) observer.observe(ref.current)
     return () => observer.disconnect()
@@ -37,7 +39,10 @@ export function Skills() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {skillCategories.map((cat) => (
-            <div key={cat.key} className="space-y-5 p-6 border border-[rgb(var(--border)/0.15)] rounded-lg hover:border-amber/40 transition-colors">
+            <div
+              key={cat.key}
+              className="space-y-5 p-6 border border-[rgb(var(--border)/0.15)] rounded-lg hover:border-amber/40 transition-colors"
+            >
               <h3 className="font-mono text-xs tracking-widest uppercase text-amber">
                 {t(`categories.${cat.key}`)}
               </h3>

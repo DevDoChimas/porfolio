@@ -18,9 +18,7 @@ export function Workflow() {
             >
               <div className="text-3xl mb-3">{step.icon}</div>
               <div className="font-mono text-xs text-amber mb-2">0{step.step}</div>
-              <h3 className="font-display font-bold text-sm mb-2">
-                {t(`steps.${step.key}.name`)}
-              </h3>
+              <h3 className="font-display font-bold text-sm mb-2">{t(`steps.${step.key}.name`)}</h3>
               <p className="font-mono text-xs opacity-60 leading-relaxed">
                 {t(`steps.${step.key}.description`)}
               </p>

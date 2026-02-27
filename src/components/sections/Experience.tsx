@@ -15,8 +15,8 @@ export function Experience() {
           <div className="absolute left-4 top-0 bottom-0 w-px bg-[rgb(var(--border)/0.2)]" />
 
           <div className="space-y-12">
-            {experiences.map((exp, i) => (
-              <div key={i} className="relative pl-12">
+            {experiences.map((exp) => (
+              <div key={exp.period} className="relative pl-12">
                 {/* Dot */}
                 <div className="absolute left-0 top-1 w-8 h-8 rounded-full border-2 border-amber bg-[rgb(var(--background))] flex items-center justify-center">
                   <div className="w-2 h-2 rounded-full bg-amber" />

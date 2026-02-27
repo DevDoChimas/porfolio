@@ -1,18 +1,18 @@
 import { useTranslations } from 'next-intl'
-import { identity, company } from '@/content/config'
+import { company, identity } from '@/content/config'
 
 export function About() {
   const t = useTranslations('about')
 
   return (
-    <section id="about" className="content-auto py-24 px-6 bg-[rgb(var(--navy))] text-[rgb(var(--cream))]">
+    <section
+      id="about"
+      className="content-auto py-24 px-6 bg-[rgb(var(--navy))] text-[rgb(var(--cream))]"
+    >
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-start">
-
         {/* Text */}
         <div className="space-y-6">
-          <p className="font-mono text-xs tracking-widest uppercase text-amber">
-            {t('label')}
-          </p>
+          <p className="font-mono text-xs tracking-widest uppercase text-amber">{t('label')}</p>
           <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight">
             {t('title')}
           </h2>
@@ -48,7 +48,6 @@ export function About() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   )

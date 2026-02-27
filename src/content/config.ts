@@ -45,18 +45,8 @@ export const company = {
 // ou coloque o texto direto aqui como fallback.
 
 export const heroRoles = {
-  'pt-BR': [
-    'Arquiteto de Software',
-    'Dev Full-Stack',
-    'Entusiasta de IA',
-    'Fazedor de Soluções',
-  ],
-  en: [
-    'Software Architect',
-    'Full-Stack Dev',
-    'AI Enthusiast',
-    'Problem Solver',
-  ],
+  'pt-BR': ['Arquiteto de Software', 'Dev Full-Stack', 'Entusiasta de IA', 'Fazedor de Soluções'],
+  en: ['Software Architect', 'Full-Stack Dev', 'AI Enthusiast', 'Problem Solver'],
 } as const
 
 // ─── Skills ──────────────────────────────────────────────────────────────────
@@ -77,27 +67,27 @@ export const skillCategories: SkillCategory[] = [
     key: 'frontend',
     skills: [
       { name: 'React / Next.js', level: 92 },
-      { name: 'TypeScript',      level: 88 },
-      { name: 'Tailwind CSS',    level: 90 },
-      { name: 'Framer Motion',   level: 75 },
+      { name: 'TypeScript', level: 88 },
+      { name: 'Tailwind CSS', level: 90 },
+      { name: 'Framer Motion', level: 75 },
     ],
   },
   {
     key: 'backend',
     skills: [
       { name: 'Python / FastAPI', level: 90 },
-      { name: 'Node.js',          level: 82 },
-      { name: 'Django',           level: 78 },
-      { name: 'REST / GraphQL',   level: 85 },
+      { name: 'Node.js', level: 82 },
+      { name: 'Django', level: 78 },
+      { name: 'REST / GraphQL', level: 85 },
     ],
   },
   {
     key: 'infra',
     skills: [
-      { name: 'PostgreSQL',    level: 85 },
-      { name: 'Docker',        level: 80 },
-      { name: 'Oracle Cloud',  level: 72 },
-      { name: 'Redis',         level: 70 },
+      { name: 'PostgreSQL', level: 85 },
+      { name: 'Docker', level: 80 },
+      { name: 'Oracle Cloud', level: 72 },
+      { name: 'Redis', level: 70 },
     ],
   },
 ]
@@ -105,16 +95,27 @@ export const skillCategories: SkillCategory[] = [
 // ─── Tech stack (marquee) ─────────────────────────────────────────────────────
 
 export const techStack = [
-  'React', 'Next.js', 'TypeScript', 'Python', 'FastAPI',
-  'Django', 'Node.js', 'PostgreSQL', 'Docker', 'Redis',
-  'Tailwind CSS', 'Framer Motion', 'Oracle Cloud', 'shadcn/ui',
+  'React',
+  'Next.js',
+  'TypeScript',
+  'Python',
+  'FastAPI',
+  'Django',
+  'Node.js',
+  'PostgreSQL',
+  'Docker',
+  'Redis',
+  'Tailwind CSS',
+  'Framer Motion',
+  'Oracle Cloud',
+  'shadcn/ui',
 ]
 
 // ─── Experiência ──────────────────────────────────────────────────────────────
 
 export type Experience = {
   period: string
-  role: string          // chave i18n ou texto direto
+  role: string // chave i18n ou texto direto
   company: string
   companyUrl?: string
   tags: string[]
@@ -150,7 +151,7 @@ export const experiences: Experience[] = [
 // ─── Projetos ─────────────────────────────────────────────────────────────────
 
 export type Project = {
-  key: string          // chave i18n para nome/descrição (messages.projects.<key>)
+  key: string // chave i18n para nome/descrição (messages.projects.<key>)
   url?: string
   github?: string
   tags: string[]
@@ -185,10 +186,10 @@ export const projects: Project[] = [
 // ─── Workflow (processo de trabalho) ─────────────────────────────────────────
 
 export const workflowSteps = [
-  { key: 'discovery',    icon: '🔍', step: 1 },
-  { key: 'architecture', icon: '🏗️',  step: 2 },
-  { key: 'development',  icon: '💻', step: 3 },
-  { key: 'review',       icon: '🔄', step: 4 },
-  { key: 'deploy',       icon: '🚀', step: 5 },
-  { key: 'evolution',    icon: '📈', step: 6 },
+  { key: 'discovery', icon: '🔍', step: 1 },
+  { key: 'architecture', icon: '🏗️', step: 2 },
+  { key: 'development', icon: '💻', step: 3 },
+  { key: 'review', icon: '🔄', step: 4 },
+  { key: 'deploy', icon: '🚀', step: 5 },
+  { key: 'evolution', icon: '📈', step: 6 },
 ]
