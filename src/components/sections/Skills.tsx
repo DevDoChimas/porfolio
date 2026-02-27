@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import { useEffect, useRef, useState } from 'react'
-import { skillCategories } from '@/content/config'
+import type { SkillCategory } from '@/lib/content'
 
 function SkillBar({ level, visible }: { level: number; visible: boolean }) {
   return (
@@ -15,7 +15,11 @@ function SkillBar({ level, visible }: { level: number; visible: boolean }) {
   )
 }
 
-export function Skills() {
+type SkillsProps = {
+  skillCategories: SkillCategory[]
+}
+
+export function Skills({ skillCategories }: SkillsProps) {
   const t = useTranslations('skills')
   const ref = useRef<HTMLElement>(null)
   const [visible, setVisible] = useState(false)

@@ -1,10 +1,13 @@
 import { Github, Linkedin, Mail, Phone } from 'lucide-react'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
-import { company, identity, social } from '@/content/config'
+import { getCompany, getIdentity, getSocial } from '@/lib/content'
 
 export function Contact() {
   const t = useTranslations('contact')
+  const identity = getIdentity()
+  const company = getCompany()
+  const social = getSocial()
 
   return (
     <section

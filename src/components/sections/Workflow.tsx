@@ -1,8 +1,9 @@
 import { useTranslations } from 'next-intl'
-import { workflowSteps } from '@/content/config'
+import { getWorkflowSteps } from '@/lib/content'
 
 export function Workflow() {
   const t = useTranslations('workflow')
+  const workflowSteps = getWorkflowSteps()
 
   return (
     <section className="content-auto py-24 px-6 bg-[rgb(var(--surface))]">

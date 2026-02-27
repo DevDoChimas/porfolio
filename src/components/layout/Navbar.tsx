@@ -4,13 +4,13 @@ import { Globe, Moon, Sun } from 'lucide-react'
 import { useLocale, useTranslations } from 'next-intl'
 import { useTheme } from 'next-themes'
 import { useEffect, useState, useSyncExternalStore } from 'react'
-import { identity } from '@/content/config'
 import { Link, usePathname, useRouter } from '@/i18n/navigation'
 import type { Locale } from '@/i18n/routing'
+import type { Identity } from '@/lib/content'
 
 const NAV_LINKS = ['about', 'skills', 'experience', 'projects', 'contact'] as const
 
-export function Navbar() {
+export function Navbar({ identity }: { identity: Identity }) {
   const t = useTranslations('nav')
   const { theme, setTheme } = useTheme()
   const locale = useLocale() as Locale

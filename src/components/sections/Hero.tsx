@@ -4,10 +4,15 @@ import { ArrowDown } from 'lucide-react'
 import Image from 'next/image'
 import { useLocale, useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
-import { heroRoles, identity } from '@/content/config'
 import type { Locale } from '@/i18n/routing'
+import type { Identity } from '@/lib/content'
 
-export function Hero() {
+type HeroProps = {
+  identity: Identity
+  heroRoles: Record<string, string[]>
+}
+
+export function Hero({ identity, heroRoles }: HeroProps) {
   const t = useTranslations('hero')
   const locale = useLocale() as Locale
   const roles = heroRoles[locale] ?? heroRoles['pt-BR']

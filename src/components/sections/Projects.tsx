@@ -1,7 +1,7 @@
 import { ExternalLink, Github } from 'lucide-react'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
-import { projects } from '@/content/config'
+import { getProjects } from '@/lib/content'
 
 const STATUS_COLORS = {
   live: 'bg-green-500/20 text-green-400 border-green-500/30',
@@ -12,6 +12,7 @@ const STATUS_COLORS = {
 
 export function Projects() {
   const t = useTranslations('projects')
+  const projects = getProjects()
 
   return (
     <section id="projects" className="content-auto py-24 px-6">

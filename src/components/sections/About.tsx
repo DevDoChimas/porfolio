@@ -1,8 +1,10 @@
 import { useTranslations } from 'next-intl'
-import { company, identity } from '@/content/config'
+import { getCompany, getIdentity } from '@/lib/content'
 
 export function About() {
   const t = useTranslations('about')
+  const identity = getIdentity()
+  const company = getCompany()
 
   return (
     <section

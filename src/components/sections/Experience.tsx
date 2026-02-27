@@ -1,8 +1,9 @@
 import { useTranslations } from 'next-intl'
-import { experiences } from '@/content/config'
+import { getExperiences } from '@/lib/content'
 
 export function Experience() {
   const t = useTranslations('experience')
+  const experiences = getExperiences()
 
   return (
     <section id="experience" className="content-auto py-24 px-6 bg-[rgb(var(--surface))]">

@@ -1,8 +1,9 @@
-import { techStack } from '@/content/config'
-
-const doubled = [...techStack, ...techStack]
+import { getTechStack } from '@/lib/content'
 
 export function Marquee() {
+  const techStack = getTechStack()
+  const doubled = [...techStack, ...techStack]
+
   return (
     <div className="border-y border-[rgb(var(--border)/0.15)] py-4 overflow-hidden bg-amber/5">
       <div className="flex animate-marquee whitespace-nowrap">
