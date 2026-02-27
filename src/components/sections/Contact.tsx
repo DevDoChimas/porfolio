@@ -7,7 +7,7 @@ export function Contact() {
   const t = useTranslations('contact')
 
   return (
-    <section id="contact" className="py-24 px-6 bg-[rgb(var(--navy))] text-[rgb(var(--cream))]">
+    <section id="contact" className="content-auto py-24 px-6 bg-[rgb(var(--navy))] text-[rgb(var(--cream))]">
       <div className="max-w-4xl mx-auto text-center">
         <p className="font-mono text-xs tracking-widest uppercase text-amber mb-4">{t('label')}</p>
         <h2 className="font-display text-4xl md:text-6xl font-bold mb-4">{t('title')}</h2>

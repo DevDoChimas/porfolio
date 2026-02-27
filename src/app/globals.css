@@ -105,6 +105,11 @@
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
+@utility content-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+
 /* ─── Scrollbar ──────────────────────────────────────────────────────────── */
 ::-webkit-scrollbar {
   width: 6px;

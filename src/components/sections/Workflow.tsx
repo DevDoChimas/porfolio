@@ -5,7 +5,7 @@ export function Workflow() {
   const t = useTranslations('workflow')
 
   return (
-    <section className="py-24 px-6 bg-[rgb(var(--surface))]">
+    <section className="content-auto py-24 px-6 bg-[rgb(var(--surface))]">
       <div className="max-w-6xl mx-auto">
         <p className="font-mono text-xs tracking-widest uppercase text-amber mb-2">{t('label')}</p>
         <h2 className="font-display text-4xl md:text-5xl font-bold mb-12">{t('title')}</h2>

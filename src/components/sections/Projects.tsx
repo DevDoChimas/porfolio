@@ -14,7 +14,7 @@ export function Projects() {
   const t = useTranslations('projects')
 
   return (
-    <section id="projects" className="py-24 px-6">
+    <section id="projects" className="content-auto py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <p className="font-mono text-xs tracking-widest uppercase text-amber mb-2">{t('label')}</p>
         <h2 className="font-display text-4xl md:text-5xl font-bold mb-12">{t('title')}</h2>

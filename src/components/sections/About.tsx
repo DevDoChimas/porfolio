@@ -5,7 +5,7 @@ export function About() {
   const t = useTranslations('about')
 
   return (
-    <section id="about" className="py-24 px-6 bg-[rgb(var(--navy))] text-[rgb(var(--cream))]">
+    <section id="about" className="content-auto py-24 px-6 bg-[rgb(var(--navy))] text-[rgb(var(--cream))]">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-start">
 
         {/* Text */}
