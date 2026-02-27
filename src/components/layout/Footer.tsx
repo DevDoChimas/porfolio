@@ -1,8 +1,10 @@
 import { useTranslations } from 'next-intl'
-import { identity, company } from '@/content/config'
+import { getCompany, getIdentity } from '@/lib/content'
 
 export function Footer() {
   const t = useTranslations('footer')
+  const identity = getIdentity()
+  const company = getCompany()
   const year = new Date().getFullYear()
 
   return (

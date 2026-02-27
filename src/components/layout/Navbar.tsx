@@ -1,16 +1,16 @@
 'use client'
 
-import { useState, useEffect, useSyncExternalStore } from 'react'
-import { useTranslations, useLocale } from 'next-intl'
+import { Globe, Moon, Sun } from 'lucide-react'
+import { useLocale, useTranslations } from 'next-intl'
 import { useTheme } from 'next-themes'
-import { Sun, Moon, Globe } from 'lucide-react'
-import { identity } from '@/content/config'
-import { type Locale, routing } from '@/i18n/routing'
+import { useEffect, useState, useSyncExternalStore } from 'react'
 import { Link, usePathname, useRouter } from '@/i18n/navigation'
+import type { Locale } from '@/i18n/routing'
+import type { Identity } from '@/lib/content'
 
 const NAV_LINKS = ['about', 'skills', 'experience', 'projects', 'contact'] as const
 
-export function Navbar() {
+export function Navbar({ identity }: { identity: Identity }) {
   const t = useTranslations('nav')
   const { theme, setTheme } = useTheme()
   const locale = useLocale() as Locale
@@ -68,6 +68,7 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           {/* Language toggle */}
           <button
+            type="button"
             onClick={toggleLocale}
             title={t('toggleLang')}
             className="p-2 rounded-full hover:bg-[rgb(var(--surface))] transition-colors"
@@ -78,14 +79,16 @@ export function Navbar() {
           {/* Theme toggle */}
           {mounted && (
             <button
+              type="button"
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
               title={t('toggleTheme')}
               className="p-2 rounded-full hover:bg-[rgb(var(--surface))] transition-colors"
             >
-              {theme === 'dark'
-                ? <Sun size={16} className="opacity-70" />
-                : <Moon size={16} className="opacity-70" />
-              }
+              {theme === 'dark' ? (
+                <Sun size={16} className="opacity-70" />
+              ) : (
+                <Moon size={16} className="opacity-70" />
+              )}
             </button>
           )}
         </div>

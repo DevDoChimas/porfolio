@@ -1,11 +1,10 @@
 import type { Metadata } from 'next'
-import { Bricolage_Grotesque, Plus_Jakarta_Sans, DM_Mono } from 'next/font/google'
-import { NextIntlClientProvider } from 'next-intl'
-import { hasLocale } from 'next-intl'
+import { Bricolage_Grotesque, DM_Mono, Plus_Jakarta_Sans } from 'next/font/google'
 import { notFound } from 'next/navigation'
+import { hasLocale, NextIntlClientProvider } from 'next-intl'
 import { ThemeProvider } from '@/components/layout/ThemeProvider'
-import { identity } from '@/content/config'
 import { routing } from '@/i18n/routing'
+import { getIdentity } from '@/lib/content'
 import '@/app/globals.css'
 
 const display = Bricolage_Grotesque({
@@ -27,15 +26,19 @@ const mono = DM_Mono({
   display: 'swap',
 })
 
-export const metadata: Metadata = {
-  title: `${identity.brand} — ${identity.name}`,
-  description: 'Full-Stack Developer especializado em Python, TypeScript e Next.js. Florianópolis, SC.',
-  keywords: ['desenvolvedor', 'full-stack', 'python', 'typescript', 'nextjs', 'florianópolis'],
-  openGraph: {
+export function generateMetadata(): Metadata {
+  const identity = getIdentity()
+  return {
     title: `${identity.brand} — ${identity.name}`,
-    siteName: identity.brand,
-    locale: 'pt_BR',
-  },
+    description:
+      'Full-Stack Developer especializado em Python, TypeScript e Next.js. Florianópolis, SC.',
+    keywords: ['desenvolvedor', 'full-stack', 'python', 'typescript', 'nextjs', 'florianópolis'],
+    openGraph: {
+      title: `${identity.brand} — ${identity.name}`,
+      siteName: identity.brand,
+      locale: 'pt_BR',
+    },
+  }
 }
 
 export default async function LocaleLayout({
@@ -64,9 +67,7 @@ export default async function LocaleLayout({
           enableSystem={false}
           disableTransitionOnChange={false}
         >
-          <NextIntlClientProvider>
-            {children}
-          </NextIntlClientProvider>
+          <NextIntlClientProvider>{children}</NextIntlClientProvider>
         </ThemeProvider>
       </body>
     </html>

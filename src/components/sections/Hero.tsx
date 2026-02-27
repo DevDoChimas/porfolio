@@ -1,13 +1,18 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { useTranslations, useLocale } from 'next-intl'
-import Image from 'next/image'
 import { ArrowDown } from 'lucide-react'
-import { identity, heroRoles } from '@/content/config'
+import Image from 'next/image'
+import { useLocale, useTranslations } from 'next-intl'
+import { useEffect, useState } from 'react'
 import type { Locale } from '@/i18n/routing'
+import type { Identity } from '@/lib/content'
 
-export function Hero() {
+type HeroProps = {
+  identity: Identity
+  heroRoles: Record<string, string[]>
+}
+
+export function Hero({ identity, heroRoles }: HeroProps) {
   const t = useTranslations('hero')
   const locale = useLocale() as Locale
   const roles = heroRoles[locale] ?? heroRoles['pt-BR']
@@ -38,17 +43,11 @@ export function Hero() {
   }, [displayed, deleting, roleIndex, roles])
 
   return (
-    <section
-      id="hero"
-      className="min-h-screen flex items-center pt-24 pb-16 px-6"
-    >
+    <section id="hero" className="min-h-screen flex items-center pt-24 pb-16 px-6">
       <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
-
         {/* ── Text ── */}
         <div className="space-y-6">
-          <p className="font-mono text-xs tracking-widest uppercase text-amber">
-            {t('greeting')}
-          </p>
+          <p className="font-mono text-xs tracking-widest uppercase text-amber">{t('greeting')}</p>
 
           <h1 className="font-display text-5xl md:text-7xl font-bold leading-tight">
             {identity.name.split(' ')[0]}
@@ -65,9 +64,9 @@ export function Hero() {
           {/* Stats */}
           <div className="flex gap-8 pt-4">
             {[
-              { value: '6+',  label: t('stats.years') },
+              { value: '6+', label: t('stats.years') },
               { value: '30+', label: t('stats.projects') },
-              { value: '∞',   label: t('stats.coffee') },
+              { value: '∞', label: t('stats.coffee') },
             ].map((s) => (
               <div key={s.label}>
                 <p className="font-display text-3xl font-bold text-amber">{s.value}</p>
@@ -123,7 +122,6 @@ export function Hero() {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   )

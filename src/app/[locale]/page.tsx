@@ -1,23 +1,28 @@
-import { Navbar }     from '@/components/layout/Navbar'
-import { Footer }     from '@/components/layout/Footer'
-import { Hero }       from '@/components/sections/Hero'
-import { Marquee }    from '@/components/sections/Marquee'
-import { About }      from '@/components/sections/About'
-import { Skills }     from '@/components/sections/Skills'
+import { Footer } from '@/components/layout/Footer'
+import { Navbar } from '@/components/layout/Navbar'
+import { About } from '@/components/sections/About'
+import { Contact } from '@/components/sections/Contact'
 import { Experience } from '@/components/sections/Experience'
-import { Projects }   from '@/components/sections/Projects'
-import { Workflow }   from '@/components/sections/Workflow'
-import { Contact }    from '@/components/sections/Contact'
+import { Hero } from '@/components/sections/Hero'
+import { Marquee } from '@/components/sections/Marquee'
+import { Projects } from '@/components/sections/Projects'
+import { Skills } from '@/components/sections/Skills'
+import { Workflow } from '@/components/sections/Workflow'
+import { getHeroRoles, getIdentity, getSkillCategories } from '@/lib/content'
 
 export default function HomePage() {
+  const identity = getIdentity()
+  const heroRoles = getHeroRoles()
+  const skillCategories = getSkillCategories()
+
   return (
     <>
-      <Navbar />
+      <Navbar identity={identity} />
       <main>
-        <Hero />
+        <Hero identity={identity} heroRoles={heroRoles} />
         <Marquee />
         <About />
-        <Skills />
+        <Skills skillCategories={skillCategories} />
         <Experience />
         <Projects />
         <Workflow />

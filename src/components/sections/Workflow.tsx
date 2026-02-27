@@ -1,11 +1,12 @@
 import { useTranslations } from 'next-intl'
-import { workflowSteps } from '@/content/config'
+import { getWorkflowSteps } from '@/lib/content'
 
 export function Workflow() {
   const t = useTranslations('workflow')
+  const workflowSteps = getWorkflowSteps()
 
   return (
-    <section className="py-24 px-6 bg-[rgb(var(--surface))]">
+    <section className="content-auto py-24 px-6 bg-[rgb(var(--surface))]">
       <div className="max-w-6xl mx-auto">
         <p className="font-mono text-xs tracking-widest uppercase text-amber mb-2">{t('label')}</p>
         <h2 className="font-display text-4xl md:text-5xl font-bold mb-12">{t('title')}</h2>
@@ -18,9 +19,7 @@ export function Workflow() {
             >
               <div className="text-3xl mb-3">{step.icon}</div>
               <div className="font-mono text-xs text-amber mb-2">0{step.step}</div>
-              <h3 className="font-display font-bold text-sm mb-2">
-                {t(`steps.${step.key}.name`)}
-              </h3>
+              <h3 className="font-display font-bold text-sm mb-2">{t(`steps.${step.key}.name`)}</h3>
               <p className="font-mono text-xs opacity-60 leading-relaxed">
                 {t(`steps.${step.key}.description`)}
               </p>
